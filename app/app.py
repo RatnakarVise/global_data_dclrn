@@ -36,6 +36,7 @@ def abap_lm_prompt(code: str) -> str:
     return (
         "You are an ABAP code analysis assistant.\n"
         "Analyze the following ABAP code and extract ALL global declarations of variables, types, tables, constants, ranges, field-symbols, and structures.\n"
+        "Ignore and do not include any SELECT-OPTIONS or PARAMETERS declarations."
         "For each, return an object with keys: type, name, object, description "
         '(in which "type" is the declaration keyword, "name" is the identifier, "object" is the technical reference, and "description" is a one-sentence explanation).\n'
         "**Return the result as a raw JSON array, with NO prose, no markdown, no code block, and no explanation. Only output a single array.**\n\n"
